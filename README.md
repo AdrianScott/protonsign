@@ -12,10 +12,10 @@ The front-end is a React.js application, which speaks to a PHP back-end accessib
 
 ## Server Requirements
 
-PHP 7.2+ (may work in newer/greater php version)
-A web server such as Apache
-Node.js e.g. 12.x LTS and npm
-sha256sum
+    PHP 7.2+ (may work in newer/greater php version)
+    A web server such as Apache
+    Node.js e.g. 12.x LTS and npm
+    sha256sum
 
 
 ## Installation
