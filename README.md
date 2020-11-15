@@ -12,9 +12,9 @@ The front-end is a React.js application, which speaks to a PHP back-end accessib
 
 ## Server Requirements
 
-PHP 5.4 (may work in newer/greater php version)
+PHP 7.2+ (may work in newer/greater php version)
 A web server such as Apache
-Node e.g. 12.x LTS and npm
+Node.js e.g. 12.x LTS and npm
 sha256sum
 
 
@@ -27,9 +27,9 @@ Installation can be made to a directory such as /data/protonsign
 
 Create a directory to store user logs, e.g.:
 
-mkdir /data/protonsign/docinfo /data/protonsign/uploads
-chgrp apache /data/protonsign/docinfo /data/protonsign/uploads
-chmod 770 /data/protonsign/docinfo /data/protonsign/uploads
+    mkdir /data/protonsign/docinfo /data/protonsign/uploads
+    chgrp apache /data/protonsign/docinfo /data/protonsign/uploads
+    chmod 770 /data/protonsign/docinfo /data/protonsign/uploads
 
 Each day a user answers a question, a JSON file named username-date.json is created in this directory. Date is calculated using hourly offset of UTC in config.php.
 
@@ -49,14 +49,14 @@ This part handles the front-end user interface.
 
 To install:
 
-npm install
-npm audit fix
+    npm install
+    npm audit fix
 
 Rename sample.env to .env.local, edit parameters and copy to .env.production and edit parameters, or else soft link it (e.g. ln -s) if contents will be the same.
 Note that we now have a REACT_APP_VERIFY_ON if you want to test as if all logins are by a verified user, e.g. for testing with unverified accounts.
 
-npm run build
-cp -r build/* /var/www/html
+    npm run build
+    cp -r build/* /var/www/html
 
 Note: The app currently charges 1 XPR for the signing transaction. This can be changed in react/src/pages/Sign/SignContainer.jsx
 
@@ -65,7 +65,7 @@ Note: The app currently charges 1 XPR for the signing transaction. This can be c
 
 Start web server, e.g.:
 
-service httpd start
+    service httpd start
 
 
 
