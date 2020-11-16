@@ -7,7 +7,7 @@ Software developed by Adrian Scott ([www.adrianscott.com](http://www.adrianscott
 
 ## Architecture Overview
 
-The front-end is a React.js application, which speaks to a PHP back-end accessible in a subdirectory on the web server, receiving POST requests and returning JSON replies with a "result" or "error" object in the replies. Data storage on the server-side consists of a "docinfo" directory with JSON files with info on the document signing request, and a "uploads" directory with the files uploaded. Uploaded files are only available through the PHP API for a configurable, limited number of days, a default of 7 days. Logins and transactions are made through the Proton-Web-SDK by the React front-end.
+The front-end is a React.js application, which speaks to a PHP back-end accessible in a subdirectory on the web server, receiving POST requests and returning JSON replies with a "result" or "error" object in the replies. Data storage on the server-side consists of a "docinfo" directory with JSON files with info on the document signing request, and a "uploads" directory with the files uploaded. Uploaded files are only available through the PHP API for a configurable, limited number of days, a default of 7 days. Logins and transactions are made through the Proton-Web-SDK by the React front-end. This app leverages code from Proton's Taskly demo.
 
 
 ## Server Requirements
@@ -58,7 +58,7 @@ Note that we now have a REACT_APP_VERIFY_ON if you want to test as if all logins
     npm run build
     cp -r build/* /var/www/html
 
-Note: The app currently charges 1 XPR for the signing transaction. This can be changed in react/src/pages/Sign/SignContainer.jsx
+Note: The app currently charges 1 FOOBAR for the signing transaction. This can be changed in react/src/pages/Sign/SignContainer.jsx . The Proton account setting for receiving the FOOBAR and doing the login is set in react/src/utils/proton.js
 
 
 ## To Run the App
@@ -69,4 +69,4 @@ Start web server, e.g.:
 
 
 
-Disclaimers: This code has not been subjected to a security audit. The react app has lots of dependencies, which also presents a risk vector. PHP configuration is important, c.f. https://phptherightway.com/
+Disclaimers: This code has not been subjected to a security audit. The react app has lots of dependencies, which also presents a risk vector. PHP configuration & security is important, c.f. https://phptherightway.com/

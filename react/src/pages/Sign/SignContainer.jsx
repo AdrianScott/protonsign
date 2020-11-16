@@ -67,7 +67,7 @@ class SignContainer extends React.Component {
 
     try {
       const actions = [{
-        account: 'eosio.token',
+        account: 'xtokens', // if XPR: 'eosio.token',
         //account: 'xtokens',
         name: 'transfer',
         authorization: [{
@@ -79,7 +79,7 @@ class SignContainer extends React.Component {
             to: ProtonSDK.requestAccount,
             //quantity: '0.010000 XUSDT',
             //quantity: '0.010000 XBTC',
-            quantity: '1.0000 XPR',
+            quantity: '1.000000 FOOBAR',
             memo: 'ProtonSign ' + docInfo.hash
         }
       }];
